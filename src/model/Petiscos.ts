@@ -2,14 +2,11 @@ import { Produto } from "./Produto";
 
 export class Petisco extends Produto{
     
-    private _petisco
-    : string;
+    private _petisco: string;
 
-	constructor(id: number, nome: string, tipo: number, preco: number, petisco
-        : string) {
+	constructor(id: number, nome: string, tipo: number, preco: number, petisco: string) {
         super(id, nome, tipo, preco) // Atributos da Classe Produto
-		this._petisco
-         = petisco
+		this._petisco = petisco
         ;
 	}
 
@@ -38,8 +35,6 @@ export class Petisco extends Produto{
 
     public visualizar(): void {
         super.visualizar();
-        console.log(`Petisco
-        : ${this._petisco
-        }`);
+        console.log(`Petisco: ${this._petisco}`);
     }
 }
