@@ -2,10 +2,10 @@ import { Produto } from "./Produto";
 
 export class Racao extends Produto{
     
-    private _pedigree: string;
+    private _pedigree: boolean;
 
-	constructor(id: number, nome: string, tipo: number, preco: number, pedigree: string) {
-        super(id, nome, tipo, preco) // Atributos da Classe Produto
+	constructor(id: number, nome: string, sabor: string,  tipo: number, preco: number, pedigree: boolean) {
+        super(id, nome, sabor, tipo, preco) // Atributos da Classe Produto
 		this._pedigree = pedigree;
 	}
 
@@ -14,7 +14,7 @@ export class Racao extends Produto{
      * Getter pedigree
      * @return {string}
      */
-	public get pedigree(): string {
+	public get pedigree(): boolean {
 		return this._pedigree;
 	}
 
@@ -22,12 +22,15 @@ export class Racao extends Produto{
      * Setter pedigree
      * @param {string} value
      */
-	public set pedigree(value: string) {
+	public set pedigree(value: boolean) {
 		this._pedigree = value;
 	}
 
     public visualizar(): void {
         super.visualizar();
-        console.log(`Pedigree: ${this._pedigree}`);
+        if(this.pedigree === true)
+        console.log("Tem pedigree")
+    else
+        console.log(`Nao tem pedigree`);
     }
 }

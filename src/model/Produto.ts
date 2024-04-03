@@ -4,10 +4,12 @@ export abstract class Produto {
     private _nome: string;
     private _tipo: number;
     private _preco: number;
+    private _sabor: string | undefined;
 
-    constructor(id: number, nome: string, tipo: number, preco: number) {
+    constructor(id: number, nome: string,sabor: string, tipo: number, preco: number) {
         this._id = id;
         this._nome = nome;
+        this._sabor = sabor;
         this._tipo = tipo;
         this._preco = preco;
     }
@@ -44,6 +46,10 @@ export abstract class Produto {
     public get preco(): number {
         return this._preco;
     }
+    public get sabor(): number {
+        return this.sabor;
+    }
+
 
     /**
      * Setter id
@@ -76,6 +82,9 @@ export abstract class Produto {
     public set preco(value: number) {
         this._preco = value;
     }
+    public set sabor(value: string) {
+        this._sabor = value;
+    }
 
     public visualizar(): void {
 
@@ -83,10 +92,10 @@ export abstract class Produto {
 
         switch (this._tipo) {
             case 1:
-                tipo = "Medicamento"
+                tipo = "Racao"
                 break;
             case 2:
-                tipo = "Cosmético"
+                tipo = "Petisco"
                 break;
         }
 
@@ -95,7 +104,10 @@ export abstract class Produto {
         console.log("****************************************************")
         console.log(`Id do produto: ${this._id}`)
         console.log(`Nome do produto: ${this._nome}`)
+        console.log(`Sabor do produto: ${this._sabor}`)
         console.log(`Tipo do produto: ${tipo}`)
         console.log(`Preço do produto: ${this._preco}`)
+        
+            
+        }
     }
-}

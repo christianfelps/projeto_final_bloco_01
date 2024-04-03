@@ -4,8 +4,8 @@ export class Petisco extends Produto{
     
     private _petisco: string;
 
-	constructor(id: number, nome: string, tipo: number, preco: number, petisco: string) {
-        super(id, nome, tipo, preco) // Atributos da Classe Produto
+	constructor(id: number, nome: string, sabor:string, tipo: number, preco: number, petisco: string) {
+        super(id, nome, sabor,tipo, preco ) // Atributos da Classe Produto
 		this._petisco = petisco
         ;
 	}
@@ -16,8 +16,7 @@ export class Petisco extends Produto{
      * 
      * @return {string}
      */
-	public get petisco
-    (): string {
+	public get petisco(): string {
 		return this._petisco
         ;
 	}
@@ -27,10 +26,8 @@ export class Petisco extends Produto{
      * 
      * @param {string} value
      */
-	public set petisco
-    (value: string) {
-		this._petisco
-         = value;
+	public set petisco(value: string) {
+		this._petisco = value;
 	}
 
     public visualizar(): void {
